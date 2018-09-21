@@ -1,0 +1,3 @@
+<?php
+//000000000000a:2:{i:0;a:9:{s:2:"id";s:1:"4";s:4:"name";s:4:"News";s:5:"title";s:12:"新闻管理";s:6:"status";s:1:"0";s:6:"remark";s:0:"";s:4:"sort";N;s:3:"pid";s:1:"1";s:5:"level";s:1:"2";s:4:"show";s:1:"1";}i:1;a:9:{s:2:"id";s:1:"5";s:4:"name";s:8:"newslist";s:5:"title";s:12:"新闻列表";s:6:"status";s:1:"0";s:6:"remark";s:0:"";s:4:"sort";N;s:3:"pid";s:1:"4";s:5:"level";s:1:"3";s:4:"show";s:1:"1";}}
+?>

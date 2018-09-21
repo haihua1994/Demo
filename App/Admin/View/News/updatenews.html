@@ -1,0 +1,139 @@
+<include file="Public/header" />
+<link rel="stylesheet" href="__PUBLIC__/umeditor/themes/default/css/umeditor.css">
+ <link rel="stylesheet" href="__PUBLIC__/layui/css/layui.css" media="all">
+<style type="text/css">
+    .edui-container{
+        margin-left: 120px;
+    }
+    #editor{
+        width:980px;
+        height:600px;
+        margin-top:0;
+    }
+</style>
+
+<section class="rt_wrap content mCustomScrollbar">
+    <div class="rt_content">
+        <div class="page_title" style="margin-top: 5px;">
+            <h2 class="fl">修改新闻</h2>
+            <a class="fr top_rt_btn" href="{:U('News/newslist')}">返回新闻列表</a>
+        </div>
+        <section>
+            <form method="post" action="" id="publishnews">
+                <input type="hidden" name="id" value="{$news.id}">
+            <ul class="ulColumn2">
+                <li>
+                    <span class="item_name" style="width:120px;">标题：</span>
+                    <input type="text" name="title" id="title" class="textbox textbox_295" value="{$news.title}" placeholder="新闻标题..." required="true" />
+                </li>
+                <li>
+                    <span class="item_name" style="width:120px;vertical-align:top;">简介：</span>
+                    <textarea placeholder="新闻简介..." id="remark" class="textarea" style="width:600px;height:100px;" name="remark">{$news.remark}</textarea>
+                </li>
+               
+                <li>
+                    <span class="item_name" style="width:120px;">封面图片：</span>
+                    <label class="single_selection">
+                        <button type="button" class="layui-btn" id="uploadImage">上传封面</button> 
+                    </label>
+                    <label class="single_selection">
+                        <div style="width: 320px;height: 200px;border:1px solid #eee;"><img id="showbox" src="{$news.image}" style="width: 100%;" /></div>
+                    </label> 
+                    <input type="hidden" id="showboxurl" name="image" value="{$news.image}">
+                </li>
+                <li>
+                    <span class="item_name" style="width:120px;">新闻正文：</span>
+                    <script id="editor" name="content" type="text/plain">{$news.content|htmlspecialchars_decode=###}</script>
+                </li>
+
+                 <li>
+                    <span class="item_name" style="width:120px;">状态：</span>
+                    <label class="single_selection"><input type="radio" name="status" checked="true" value="1" />发布</label>
+                    <label class="single_selection"><input type="radio" name="status" value="0" />草稿箱</label>
+                </li>
+                <li>
+                    <span class="item_name" style="width:120px;"></span>
+                    <input type="button" class="link_btn" value="提交" id="sub" />
+               </li>
+            </ul>
+            </form>
+        </section>
+    </div>
+</section>
+<script type="text/javascript" src="__PUBLIC__/umeditor/third-party/template.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/umeditor/umeditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/umeditor/umeditor.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/layui/layui.js"></script>
+<script type="text/javascript">
+        var um = UM.getEditor('editor');
+</script>
+<script type="text/javascript">
+    $(function(){
+        $('#sub').click(function(event) {
+            var image = $('#showboxurl').val()
+            var title = $('#title').val()
+           
+
+            if (image.length<1 ) {
+                layer.alert("请上传封面", 
+                {
+                    skin: 'layui-layer-lan',
+                    closeBtn: 0,
+                    anim: 1 ,
+                });
+                return 
+            }
+            if (title.length<5) {
+                layer.alert("标题不能少于5个字", 
+                {
+                    skin: 'layui-layer-lan',
+                    closeBtn: 0,
+                    anim: 1 ,
+                });
+                return
+            }
+            $('#publishnews').submit();
+        });
+    })
+</script>
+<script type="text/javascript">
+    layui.use(['upload','layer'], function(){
+        var upload = layui.upload;
+        var layer = layui.layer; 
+        var uploadIn = upload.render({
+            elem: '#uploadImage' ,
+            url: "{:U('News/uploadImage')}",
+            accept:'images',
+            exts:"jpg|png|gif|bmp|jpeg",
+            size:'2048',
+            before: function(obj){ 
+                layer.load();
+            },
+            done: function(res){
+                layer.closeAll('loading');
+                if (res.code ==0) {
+                    $('#showbox').attr('src',res.data);
+                    $('#showboxurl').val(res.data);
+                }else{
+                    layer.alert(res.msg, 
+                    {
+                        skin: 'layui-layer-lan',
+                        closeBtn: 0,
+                        anim: 4 ,
+                    });
+                }
+            },
+            error: function(){
+                layer.closeAll('loading');
+                layer.alert("服务器错误", 
+                {
+                    skin: 'layui-layer-lan',
+                    closeBtn: 0,
+                    anim: 4 ,
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>

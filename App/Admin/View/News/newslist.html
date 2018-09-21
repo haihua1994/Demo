@@ -1,0 +1,92 @@
+<include file="Public/header" />
+
+<style type="text/css">
+    .v_update{
+            border:1px solid #19a97b;
+            padding:2px 10px;
+            color:#19a97b;
+            cursor: pointer;
+            transition:background 0.8s;
+        }
+        .v_update:hover{
+          background:#19a97b;
+          color:white;
+        }
+
+        .v_delete{
+          border:1px solid red;
+          padding:2px 10px;
+          color:red;
+          cursor: pointer;
+          transition:background 0.8s; 
+        }
+
+        .v_delete:hover{
+          background:red;
+          color:white;
+        }
+      
+</style>
+
+
+<section class="rt_wrap content mCustomScrollbar">
+    <div class="rt_content">
+        <section style="margin:15px;">
+
+            <a href="{:U('News/addnews')}"><input type="button" value="添加新闻" class="group_btn" id="sub"/></a>
+        </section>
+        <section>
+
+
+            <table class="table">
+                <tr>
+                    <td>ID</td>
+                    <td>标题</td>
+                    <td>发布日期</td>
+                    <td>操作</td>
+                </tr>
+
+                <volist name="data" id="value" >
+                    <tr class="dataList">
+                    <td>{$value['id']}</td>
+                    <td>{$value['title']}</td>
+                    <td>{$value['create_time']|date="Y-m-d H:i:s",###}</td>
+                   
+                    <td>
+                  
+                    <a href="{:U('News/updatenews',array('id'=>$value['id']))}"><span class="v_update">修改</span></a>
+                    <span class="v_delete" data="{$value['id']}">删除</span>
+                  
+                    </td>
+                    </tr>
+                </volist>
+            </table>
+
+        </section>
+    </div>
+</section>
+<script type="text/javascript">
+      $(function(){
+
+       $('.v_delete').on('click',function(){
+           
+            var id = $(this).attr('data');
+            var userLine = $(this);
+
+            $.ajax({
+              type:'post',
+              url: "{:U('News/deletenews')}",
+              data: 'id='+id,
+              success:function(e){
+                  if(e=='success'){
+                    userLine.parent().parent().css('display','none');
+                  }else{
+                    alert('删除失败.请重试');
+                  }
+              }
+            });
+       });
+     });
+</script>
+</body>
+</html>

@@ -1,0 +1,76 @@
+[ 2018-09-20T00:34:07+08:00 ] ::1 /index.php/Admin/News/uploadImage.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001164s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001888s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\php\Demo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2018-09-20T00:35:07+08:00 ] ::1 /index.php/Admin/News/uploadImage.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000650s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001268s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\php\Demo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2018-09-20T00:40:46+08:00 ] ::1 /index.php/Admin/News/uploadImage.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000820s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001389s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\php\Demo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2018-09-20T00:46:49+08:00 ] ::1 /index.php/Admin/News/uploadImage.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001361s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001948s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\php\Demo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2018-09-20T00:52:31+08:00 ] ::1 /index.php/Admin/News/uploadImage.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000647s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001074s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\php\Demo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2018-09-20T00:53:55+08:00 ] ::1 /index.php/Admin/News/add{:U('Index/news')}
+ERR: syntax error, unexpected '}'
+
+[ 2018-09-20T00:54:10+08:00 ] ::1 /index.php/Admin/News/uploadImage.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000669s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001123s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\php\Demo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2018-09-20T00:54:16+08:00 ] ::1 /index.php/Admin/News/News/newslist
+ERR: 非法操作:News
+
+[ 2018-09-20T00:55:34+08:00 ] ::1 /index.php/Admin/News/uploadImage.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001024s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001822s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\php\Demo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2018-09-20T23:34:57+08:00 ] ::1 /index.php/Admin/News/uploadImage.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001484s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\php\Demo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2018-09-20T23:41:42+08:00 ] ::1 /index.php/Admin/News/newslist
+ERR: syntax error, unexpected 'if' (T_IF)
+
+[ 2018-09-20T23:42:07+08:00 ] ::1 /index.php/Admin/News/delete{:U('Index/news')}
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000610s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001064s ]
+SQL: SHOW COLUMNS FROM `d_news` [ RunTime:0.0007s ]
+SQL: DELETE FROM `d_news` WHERE `id` = 1009 [ RunTime:0.0407s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000842s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000866s ]
+
+[ 2018-09-20T23:43:04+08:00 ] ::1 /index.php/Admin/News/uploadImage.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000727s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001265s ]
+NOTIC: [2] call_user_func() expects parameter 1 to be a valid callback, no array or string given E:\php\Demo\ThinkPHP\Library\Think\Upload.class.php 第 170 行.
+
+[ 2018-09-20T23:45:41+08:00 ] ::1 /index.php/Admin/News/updatenews/id/1010.html
+ERR: 模板不存在:./App/Admin/View/News/update{:U('Index/news')}
+
